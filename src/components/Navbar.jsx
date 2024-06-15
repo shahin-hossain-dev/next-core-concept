@@ -29,6 +29,7 @@ const Navbar = () => {
       path: "/portfolio",
     },
   ];
+
   const handleNavigateLogin = () => {
     router.push("/login");
   };
@@ -39,7 +40,9 @@ const Navbar = () => {
         {links?.map((link, idx) => (
           <li key={idx}>
             <Link
-              className={pathName === link.path && "text-red-600 font-medium"}
+              className={`${
+                pathName === link.path && "text-red-600 font-medium"
+              }`}
               href={link.path}
             >
               {link.title}

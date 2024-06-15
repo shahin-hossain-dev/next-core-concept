@@ -1,20 +1,16 @@
 import Link from "next/link";
+import React from "react";
 
-const BlogPage = () => {
+const page = ({ params }) => {
+  console.log([params]);
   return (
     <div>
-      <h2 className="text-2xl text-center font-bold">Blog</h2>
-      <Link
-        href="/blogs/special-blog"
-        className="bg-slate-700 text-white border rounded-md px-2 py-1 shadow-xl"
-      >
-        Special Blogs
-      </Link>
+      <h2>This is Special blog</h2>
       {blogs.map((blog) => (
         <div key={blog.slug} className=" p-5 border border-slate-500 m-5">
-          <h2 className="my-3">{blog.title}</h2>
+          <h2 className="text-2xl mb-3">{blog.title}</h2>
           <Link
-            href={`/blogs/${blog.slug}`}
+            href={`/blogs/special-blog/${blog.slug}`}
             className="bg-rose-700 text-white border rounded-md px-2 py-1 shadow-xl"
           >
             View Details
@@ -24,7 +20,6 @@ const BlogPage = () => {
     </div>
   );
 };
-
 const blogs = [
   {
     title: "A Step-by-Step Guide to Building a Simple Next.js 13 Blog",
@@ -106,5 +101,4 @@ const blogs = [
     slug: "integrating-typescript-nextjs",
   },
 ];
-
-export default BlogPage;
+export default page;
