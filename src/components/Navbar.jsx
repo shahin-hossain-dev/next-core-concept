@@ -28,6 +28,10 @@ const Navbar = () => {
       title: "Portfolio",
       path: "/portfolio",
     },
+    {
+      title: "Dashboard",
+      path: "/dashboard",
+    },
   ];
 
   const handleNavigateLogin = () => {
