@@ -33,6 +33,15 @@ const Navbar = () => {
   const handleNavigateLogin = () => {
     router.push("/login");
   };
+
+  // dashboard route er jonno conditionally route show korbe.
+  if (pathName.includes("dashboard")) {
+    return (
+      <div className="bg-green-500 py-3 px-5">
+        <h2>Dashboard</h2>
+      </div>
+    );
+  }
   return (
     <nav className="bg-slate-600 text-white py-5 px-5 flex justify-between items-center">
       <h2 className="text-3xl font-medium">Next Core</h2>
